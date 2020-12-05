@@ -1,0 +1,56 @@
+<ion-header id="header">
+	<ion-navbar color="primary">
+		<ion-title id="miCuarentenaTitle">Monitor de riesgo</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="logout()">
+				<ion-icon id="logOutIcon" name="custom-logout"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="refreshScores($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-card id="nivelExposicion">
+        <ion-card-title>
+            Exposición actual
+            <ion-icon id="info" name="ios-information-circle-outline"
+                      style="float: right;" (click)="scoreInformation()">
+            </ion-icon>
+        </ion-card-title>
+
+        <ion-card-content>
+            <div class="circle-container" style="text-align: center;">
+                <div class="circle" [ngClass]="{
+                    'green': currentScore <= 1,
+                    'orange': currentScore > 1 && currentScore <= 2,
+                    'red': currentScore > 2 && currentScore <= 3
+                }">
+                    <span class="circle-text" *ngIf="currentScore == undefined">Registra ubicación de casa<br />⬇</span>
+                    <span class="circle-text" *ngIf="currentScore <= 1">Bajo</span>
+                    <span class="circle-text" *ngIf="currentScore > 1 && currentScore <= 2">Medio</span>
+                    <span class="circle-text" *ngIf="currentScore > 2 && currentScore <= 3">Alto</span>
+                </div>
+            </div>
+            <div id="landmark-container">
+                <ion-icon id="locationIconGreen" name="pin" *ngIf="ableToTrack !== undefined"
+                            (click)="showHomeInfoModal()"></ion-icon>
+                <ion-icon id="locationIconRed" name="pin" *ngIf="ableToTrack == undefined"
+                            (click)="showHomeInfoModal()"></ion-icon>
+            </div>
+        </ion-card-content>
+    </ion-card>
+
+    <h4 class="subTitulo">
+        Exposición diaria
+    </h4>
+
+    <div>
+        <div class="days">00h</div><div class="days">06h</div><div class="days">12h</div><div class="days">18h</div>
+    </div>
+    <div id="score-bar">
+        <div class="score-square" *ngFor="let score of scores"  [ngStyle]="{ 'background-color': score.color }"></div>
+    </div>
+</ion-content>

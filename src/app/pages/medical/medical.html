@@ -1,0 +1,30 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>Encuestas</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="logout()">
+				<ion-icon id="logOutIcon" name="custom-logout"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+    <h1>
+
+    </h1>
+
+    <div class="container">
+
+        <p *ngIf="forms.length === 0" class="empty-message">
+            Cuando existan formularios que debas llenar, aparecerán aquí.
+        </p>
+
+        <button ion-button icon-end full class="button"
+        *ngFor="let form of forms" (click)="goToForm(form.type)">
+            <p> {{ form.title }}</p>
+        </button>
+
+    </div>
+
+</ion-content>

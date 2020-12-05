@@ -1,0 +1,349 @@
+[
+    {
+        "uuid": "39f736d2-7fc4-49f3-ab0e-feefe1405d62",
+        "type": "COMPUESTA",
+        "name": "Formulario de información personal",
+        "gps": "no",
+        "data": {
+            "initial": {
+                "children": [
+                    {
+                        "label": "Información personal",
+                        "icon": "md-person",
+                        "type": "collapseList",
+                        "initialShow": false,
+                        "children": [
+                            {
+                                "label": "Dirección de residencia habitual",
+                                "type": "input_text",
+                                "show": true,
+                                "id": "direccion_residencia",
+                                "blurFunction": "{\"validateTextLength\":[\"direccion_residencia\"]}",
+                                "errors": [],
+                                "value": "",
+                                "placeholder": "Ingresa tu dirección"
+                            },
+                            {
+                                "type": "select",
+                                "id": "provincia",
+                                "value": "",
+                                "placeholder": "Provincia",
+                                "blurFunction": "{}",
+                                "errors": [],
+                                "show": true,
+                                "okText": "Aceptar",
+                                "cancelText": "Cancelar",
+                                "options": [
+                                    {
+                                        "label": "Azuay"
+                                    },
+                                    {
+                                        "label": "Bolívar"
+                                    },
+                                    {
+                                        "label": "Cañar"
+                                    },
+                                    {
+                                        "label": "Carchi"
+                                    },
+                                    {
+                                        "label": "Chimborazo"
+                                    },
+                                    {
+                                        "label": "Cotopaxi"
+                                    },
+                                    {
+                                        "label": "El oro"
+                                    },
+                                    {
+                                        "label": "Esmeraldas"
+                                    },
+                                    {
+                                        "label": "Galápagos"
+                                    },
+                                    {
+                                        "label": "Guayas"
+                                    },
+                                    {
+                                        "label": "Imbabura"
+                                    },
+                                    {
+                                        "label": "Loja"
+                                    },
+                                    {
+                                        "label": "Los Ríos"
+                                    },
+                                    {
+                                        "label": "Manabí"
+                                    },
+                                    {
+                                        "label": "Morona Santiago"
+                                    },
+                                    {
+                                        "label": "Napo"
+                                    },
+                                    {
+                                        "label": "Orellana"
+                                    },
+                                    {
+                                        "label": "Pastaza"
+                                    },
+                                    {
+                                        "label": "Pichincha"
+                                    },
+                                    {
+                                        "label": "Santa Elena"
+                                    },
+                                    {
+                                        "label": "Santo Domingo de los Tsáchilas"
+                                    },
+                                    {
+                                        "label": "Sucumbíos"
+                                    },
+                                    {
+                                        "label": "Tungurahua"
+                                    },
+                                    {
+                                        "label": "Zamora Chinchipe"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "select",
+                                "id": "sexo",
+                                "value": "",
+                                "show": true,
+                                "placeholder": "Sexo",
+                                "blurFunction": "{}",
+                                "okText": "Aceptar",
+                                "cancelText": "Cancelar",
+                                "options": [
+                                    {
+                                        "label": "Masculino"
+                                    },
+                                    {
+                                        "label": "Femenino"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "select",
+                                "id": "edad",
+                                "value": "",
+                                "show": true,
+                                "placeholder": "Edad",
+                                "blurFunction": "{}",
+                                "okText": "Aceptar",
+                                "cancelText": "Cancelar",
+                                "options": [{"label": 0}, {"label": 1}, {"label": 2}, {"label": 3}, {"label": 4}, {"label": 5}, {"label": 6}, {"label": 7}, {"label": 8}, {"label": 9}, {"label": 10}, {"label": 11}, {"label": 12}, {"label": 13}, {"label": 14}, {"label": 15}, {"label": 16}, {"label": 17}, {"label": 18}, {"label": 19}, {"label": 20}, {"label": 21}, {"label": 22}, {"label": 23}, {"label": 24}, {"label": 25}, {"label": 26}, {"label": 27}, {"label": 28}, {"label": 29}, {"label": 30}, {"label": 31}, {"label": 32}, {"label": 33}, {"label": 34}, {"label": 35}, {"label": 36}, {"label": 37}, {"label": 38}, {"label": 39}, {"label": 40}, {"label": 41}, {"label": 42}, {"label": 43}, {"label": 44}, {"label": 45}, {"label": 46}, {"label": 47}, {"label": 48}, {"label": 49}, {"label": 50}, {"label": 51}, {"label": 52}, {"label": 53}, {"label": 54}, {"label": 55}, {"label": 56}, {"label": 57}, {"label": 58}, {"label": 59}, {"label": 60}, {"label": 61}, {"label": 62}, {"label": 63}, {"label": 64}, {"label": 65}, {"label": 66}, {"label": 67}, {"label": 68}, {"label": 69}, {"label": 70}, {"label": 71}, {"label": 72}, {"label": 73}, {"label": 74}, {"label": 75}, {"label": 76}, {"label": 77}, {"label": 78}, {"label": 79}, {"label": 80}, {"label": 81}, {"label": 82}, {"label": 83}, {"label": 84}, {"label": 85}, {"label": 86}, {"label": 87}, {"label": 88}, {"label": 89}, {"label": 90}, {"label": 91}, {"label": 92}, {"label": 93}, {"label": 94}, {"label": 95}, {"label": 96}, {"label": 97}, {"label": 98}, {"label": 99}, {"label": 100}, {"label": 101}, {"label": 102}, {"label": 103}, {"label": 104}, {"label": 105}, {"label": 106}, {"label": 107}, {"label": 108}, {"label": 109}, {"label": 110}, {"label": 111}, {"label": 112}, {"label": 113}, {"label": 114}, {"label": 115}, {"label": 116}, {"label": 117}, {"label": 118}, {"label": 119}, {"label": 120}]
+
+                            },
+                            {
+                                "label": "¿Es usted fumador/a?",
+                                "type": "toggle",
+                                "checked": false,
+                                "show": true,
+                                "id": "fumador",
+                                "blurFunction": "{}",
+                                "errors": [],
+                                "value": ""
+                            },
+                            {
+                                "label": "¿Tiene usted un trabajo donde interactúa con muchas personas?",
+                                "type": "toggle",
+                                "checked": false,
+                                "show": true,
+                                "id": "trabajo_alto_riesgo",
+                                "blurFunction": "{\"mostrarPregunta\":[\"trabajo_alto_riesgo\",\"opciones_trabajo_alto_riesgo\"]}",
+                                "errors": [],
+                                "value": ""
+                            },
+                            {
+                                "label": "¿Cuál trabajo tiene usted?",
+                                "type": "checkbox_group",
+                                "id": "opciones_trabajo_alto_riesgo",
+                                "blurFunction": "{}",
+                                "errors": [],
+                                "show": false,
+                                "children": [
+                                    {
+                                        "label": "Profesional de la salud",
+                                        "checked": false
+                                    },
+                                    {
+                                        "label": "Policía/Militar",
+                                        "checked": false
+                                    },
+                                    {
+                                        "label": "Cajero",
+                                        "checked": false
+                                    },
+                                    {
+                                        "label": "Vendedor",
+                                        "checked": false
+                                    },
+                                    {
+                                        "label": "Repartidor",
+                                        "checked": false
+                                    },
+                                    {
+                                        "label": "Transportista",
+                                        "checked": false
+                                    },
+                                    {
+                                        "label": "Otro",
+                                        "checked": false
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "¿Ha tenido contacto con un caso confirmado o sospechoso?",
+                                "type": "toggle",
+                                "checked": false,
+                                "show": true,
+                                "id": "caso_confirmado_sospechoso",
+                                "blurFunction": "{\"mostrarPregunta\":[\"caso_confirmado_sospechoso\",\"dias_contacto\"]}",
+                                "errors": [],
+                                "value": ""
+                            },
+                            {
+                                "label": "¿Hace cuántos días?",
+                                "type": "input_text",
+                                "id": "dias_contacto",
+                                "show": false,
+                                "blurFunction": "{\"validateIntegerPositiveNumber\":[\"dias_contacto\"]}",
+                                "errors": [],
+                                "value": "",
+                                "placeholder": "Ingresa la cantidad de días"
+                            },
+                            {
+                                "label": "¿Llegó al ecuador del extranjero en los últimos 14 días?",
+                                "type": "toggle",
+                                "checked": false,
+                                "show": true,
+                                "id": "llego_extranjero",
+                                "blurFunction": "{\"mostrarPregunta\":[\"llego_extranjero\",\"dias_llego_extranjero\"]}",
+                                "errors": [],
+                                "value": ""
+                            },
+                            {
+                                "label": "¿Hace cuántos días?",
+                                "type": "input_text",
+                                "id": "dias_llego_extranjero",
+                                "show": false,
+                                "blurFunction": "{\"validateIntegerPositiveNumber\":[\"dias_llego_extranjero\"]}",
+                                "errors": [],
+                                "value": "",
+                                "placeholder": "Ingresa la cantidad de días"
+                            },
+                            {
+                                "label": "Condiciones preexistentes",
+                                "type": "checkbox_group",
+                                "id": "condiciones_preexistentes",
+                                "blurFunction": "{}",
+                                "errors": [],
+                                "show": true,
+                                "children": [
+                                    {
+                                        "label": "Diabetes",
+                                        "checked": false
+                                    },
+                                    {
+                                        "label": "Sobrepeso",
+                                        "checked": false
+                                    },
+                                    {
+                                        "label": "Hipertensión",
+                                        "checked": false
+                                    },
+                                    {
+                                        "label": "Artritis",
+                                        "checked": false
+                                    },
+                                    {
+                                        "label": "Enfermedad autoinmune",
+                                        "checked": false
+                                    },
+                                    {
+                                        "label": "Enfermedad cardiaca",
+                                        "checked": false
+                                    },
+                                    {
+                                        "label": "Enfermedad pulmonar",
+                                        "checked": false
+                                    },
+                                    {
+                                        "label": "Cáncer",
+                                        "checked": false
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Movilidad",
+                        "icon": "md-person",
+                        "type": "collapseList",
+                        "initialShow": false,
+                        "children": [
+                            {
+                                "label": "¿Se desplaza regularmente fuera de su casa durante la emergencia?",
+                                "type": "toggle",
+                                "checked": false,
+                                "show": true,
+                                "id": "desplazamiento_fuera",
+                                "blurFunction": "{\"mostrarPregunta2\":[\"desplazamiento_fuera\",\"razon_desplazamiento_fuera\",\"frecuencia_desplazamiento_fuera\"]}",
+                                "errors": [],
+                                "value": ""
+                            },
+                            {
+                                "type": "select",
+                                "id": "razon_desplazamiento_fuera",
+                                "value": "",
+                                "show": false,
+                                "placeholder": "¿Por qué razón se desplaza fuera de su hogar?",
+                                "blurFunction": "{}",
+                                "errors": [],
+                                "okText": "Aceptar",
+                                "cancelText": "Cancelar",
+                                "options": [
+                                    {
+                                        "label": "Conseguir provisiones"
+                                    },
+                                    {
+                                        "label": "Trabajo"
+                                    },
+                                    {
+                                        "label": "Personal de emergencia (Gobierno, Militar, Policía, Salud, etc.)"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "select",
+                                "id": "frecuencia_desplazamiento_fuera",
+                                "value": "",
+                                "show": false,
+                                "placeholder": "Frecuencia con la que sale de su hogar",
+                                "blurFunction": "{}",
+                                "errors": [],
+                                "okText": "Aceptar",
+                                "cancelText": "Cancelar",
+                                "options": [
+                                    {
+                                        "label": "Diario"
+                                    },
+                                    {
+                                        "label": "Semanal"
+                                    },
+                                    {
+                                        "label": "Según restricciones de movilidad"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+]

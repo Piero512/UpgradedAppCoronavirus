@@ -1,0 +1,239 @@
+page-user {
+
+    .circle-container {
+        margin-top: 5%;
+        margin-bottom: 3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .circle {
+        height: 250px;
+        width: 250px;
+        padding: 0 20px 0 20px;
+        background-color: #999999;
+        border-radius: 200px 200px 200px 200px;
+        -moz-border-radius: 200px 200px 200px 200px;
+        -webkit-border-radius: 200px 200px 200px 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .circle-text {
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .green {
+        background-color: #49BEAA;
+    }
+
+    .orange {
+        background-color: #EEB868;
+    }
+
+    .red {
+        background-color: #EF767A;
+    }
+
+    #landmark-container {
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    #score-bar {
+        height: 5%;
+        width: 100%;
+        background-color: transparent;
+        border: 0;
+        margin-bottom: 20px;
+    }
+
+    .score-square {
+        display: inline-block;
+        height: 100%;
+        width: 4.15%;
+        margin: 0;
+        color: #ffffff  ;
+        border: 1px solid #ffffff;
+    }
+
+    .days {
+
+        display: inline-block;
+        width: 25%;
+        text-align: left;
+
+    }
+    .day1 {
+
+        display: inline-block;
+        width: 21%;
+        text-align: left;
+
+    }
+
+    .day24 {
+
+        display: inline-block;
+        width: 4%;
+        text-align: left;
+
+    }
+
+    .container {
+        margin-top: 10%;
+
+        #enviarUbicacionButton{
+            font-weight: bold;
+            height: 98%;
+            margin-top: 0%;
+            //color:#eeeeee!important;
+        }
+    }
+
+    .description {
+        font-size: 16px;
+        text-align: justify;
+    }
+
+    ion-select {
+        margin: 0 auto;
+        max-width: 70% !important;
+    }
+
+    #form-feedback {
+        text-align: center;
+    }
+
+    .feedback-message {
+        display: inline-block;
+    }
+
+    .form-body {
+
+        height: auto; opacity: 1;
+        transition: height 0ms 400ms, opacity 400ms 0ms;
+        margin-bottom: 7%;
+
+    }
+
+    .hidden {
+        overflow: hidden; // Hide the element content, while height = 0
+        height: 0; opacity: 0;
+        transition: height 0ms 0ms, opacity 600ms 0ms;
+    }
+
+    .info-button{
+        display: inline-block;
+        font-weight: bold;
+        margin-bottom: 10%;
+    }
+
+    ion-input {
+        background-color: #eeeeee;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    input {
+        text-align: center;
+    }
+
+    #labels {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .label {
+        margin: 0 5px 15px 5px;
+        font-weight: bold;
+    }
+
+    #nivelExposicion {
+        position: relative;
+        text-align: center;
+        margin-top: 5%;
+
+        .card-title {
+            position: center;
+            margin-top: 5%;
+            margin-left: 5%;
+            margin-bottom: 0%;
+            font-size: 1.5em;
+            width: 100%;
+            font-weight: bold;
+            color: #6e6e6e;
+        }
+
+    }
+
+    #info{
+        color: #0300c8;
+        display: inline-block;
+        margin-right: 9%;
+        margin-top: -3%;
+        font-weight: bold;
+    }
+
+    #infoUbicacion{
+        color: #0300c8;
+        display: inline-block;
+        margin-left: 2%;
+        font-weight: bold;
+    }
+
+    #ubicacionCasaTitle{
+        margin-left: 8%;
+    }
+
+    .subTitulo{
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10%;
+        margin-bottom: 5%;
+    }
+
+    .icon{
+        color: #eeeeee;
+        display: inline-block;
+    }
+    #enviarRadioText{
+        color: #eeeeee;
+        margin-top: 15%;
+        size: 100%;
+    }
+
+    #locationIconRed{
+        color:#D32F2F;
+        font-size: xxx-large;
+    }
+
+    #locationIconGreen{
+        color: #50C878;
+        font-size: xxx-large;
+    }
+
+    #radiusColumn{
+        flex: 0 0 58%;
+    }
+    #iconColumn{
+        flex: 0 0 14%;
+    }
+    #saveColumn{
+        flex: 0 0 28%;
+        margin-right: -10% !important;
+    }
+
+    #gridUbicacionCasa{
+        margin-top: -8%;
+    }
+
+    #inputRadioCasa,#nivelExposicion,#enviarUbicacionButton{
+        border-radius: 10px !important;
+    }
+}

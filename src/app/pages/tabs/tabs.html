@@ -1,0 +1,7 @@
+<ion-tabs tabsPlacement="bottom" [(selectedIndex)]="selectedIndex" color="tabs">
+    <ion-tab [root]="user" tabIcon="home"></ion-tab>
+    <ion-tab [root]="medical" tabIcon="clipboard"></ion-tab>
+    <ion-tab [root]="testResults" tabIcon="flask"></ion-tab>
+    <ion-tab (ionSelect)="goToForm()" tabIcon="person"></ion-tab>
+    <ion-tab [root]="about" tabIcon="help-circle"></ion-tab>
+</ion-tabs>

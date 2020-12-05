@@ -1,0 +1,49 @@
+page-auth {
+    img {
+        max-height:150px;
+        max-width:150px;
+    }
+    .btn-login{
+      box-shadow: none !important;
+      border-radius: 20px;
+      margin-bottom: 5%;
+    }
+    ion-input{
+      border-radius: 10px;
+    }
+    .btn-unlink{
+      color: #536d38 !important;
+      background-color: #ffffff !important;
+      box-shadow: none !important;
+      border: 1px solid #536d38 !important;
+      border-radius: 20px;
+    }
+    .linked-user{
+      border-radius: 20px;
+    }
+    .input-username, .input-password{
+      border-radius: 25px !important;
+      margin-bottom: 8%;
+    }
+    .text-input {
+      text-align: center !important;
+    }
+    $text-input-md-show-focus-highlight:false;
+    *{
+      font-family: $font-family-base;
+      color: #04034d;
+    }
+
+    #ingresarButtonText{
+      color: #eeeeee;
+      font-weight: bold;
+      font-size: 110%;
+      margin-top: 4%;
+    }
+
+    #contrasena {
+      color: #069;
+      font-size: 100%;
+      margin-top: 10%;
+    }
+}

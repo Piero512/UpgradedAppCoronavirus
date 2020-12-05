@@ -1,0 +1,208 @@
+[
+    {
+        "uuid": "21ccca2f-322a-424f-bba5-b39c3c12c19a",
+        "type": "COMPUESTA",
+        "name": "Formulario de seguimiento de síntomas",
+        "gps": "no",
+        "data": {
+            "follow_up": {
+                "children": [
+                    {
+                        "label": "Síntomas",
+                        "icon": "md-person",
+                        "type": "collapseList",
+                        "initialShow": false,
+                        "children": [
+                            {
+                                "label": "¿Hoy siente fiebre?",
+                                "type": "toggle",
+                                "checked": false,
+                                "show": true,
+                                "id": "siente_fiebre",
+                                "blurFunction": "{\"mostrarPregunta\":[\"siente_fiebre\",\"temperatura_actual\"]}",
+                                "errors": [],
+                                "value": ""
+                            },
+                            {
+                                "type": "select",
+                                "id": "temperatura_actual",
+                                "value": "",
+                                "show": false,
+                                "placeholder": "¿Cuál es su temperatura?",
+                                "blurFunction": "{\"validateEmptyShowedInput\":[\"temperatura_actual\"]}",
+                                "errors": [],
+                                "okText": "Aceptar",
+                                "cancelText": "Cancelar",
+                                "options": [
+                                    {
+                                        "label": "Normal"
+                                    },
+                                    {
+                                        "label": "Entre 37.5° y 38°"
+                                    },
+                                    {
+                                        "label": "Entre 38° y 39°"
+                                    },
+                                    {
+                                        "label": "Mayor a 39°"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "select",
+                                "id": "tos_actual",
+                                "value": "",
+                                "show": true,
+                                "placeholder": "¿Hoy tiene tos?",
+                                "blurFunction": "{\"validateEmptyShowedInput\":[\"tos_actual\"]}",
+                                "errors": [],
+                                "okText": "Aceptar",
+                                "cancelText": "Cancelar",
+                                "options": [
+                                    {
+                                        "label": "No"
+                                    },
+                                    {
+                                        "label": "Sí, tos seca"
+                                    },
+                                    {
+                                        "label": "Sí, tos con líquido"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "select",
+                                "id": "dolor_cabeza_actual",
+                                "value": "",
+                                "show": true,
+                                "placeholder": "¿Hoy tiene dolor de cabeza?",
+                                "blurFunction": "{\"validateEmptyShowedInput\":[\"dolor_cabeza_actual\"]}",
+                                "errors": [],
+                                "okText": "Aceptar",
+                                "cancelText": "Cancelar",
+                                "options": [
+                                    {
+                                        "label": "No"
+                                    },
+                                    {
+                                        "label": "Sí, dolor leve"
+                                    },
+                                    {
+                                        "label": "Sí, dolor agudo"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "select",
+                                "id": "dificultad_respirar_actual",
+                                "value": "",
+                                "show": true,
+                                "placeholder": "¿Hoy tiene dificultad para respirar?",
+                                "blurFunction": "{\"validateEmptyShowedInput\":[\"dificultad_respirar_actual\"]}",
+                                "errors": [],
+                                "okText": "Aceptar",
+                                "cancelText": "Cancelar",
+                                "options": [
+                                    {
+                                        "label": "No"
+                                    },
+                                    {
+                                        "label": "Sí, dificultad leve"
+                                    },
+                                    {
+                                        "label": "Sí, dificultad aguda"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Medidas tomadas",
+                        "icon": "md-person",
+                        "type": "collapseList",
+                        "initialShow": false,
+                        "children": [
+                            {
+                                "label": "¿Se lava las manos regularmente?",
+                                "type": "toggle",
+                                "checked": false,
+                                "show": true,
+                                "id": "lavar_manos_regularmente",
+                                "blurFunction": "{}",
+                                "errors": [],
+                                "value": ""
+                            },
+                            {
+                                "label": "¿Se encuentra en aislamiento?",
+                                "type": "toggle",
+                                "checked": false,
+                                "show": true,
+                                "id": "aislamiento",
+                                "blurFunction": "{\"mostrarPregunta3\":[\"aislamiento\",\"tipo_aislamiento\",\"lugar_aislamiento\",\"dias_aislamiento\"]}",
+                                "errors": [],
+                                "value": ""
+                            },
+                            {
+                                "type": "select",
+                                "id": "tipo_aislamiento",
+                                "value": "",
+                                "show": false,
+                                "placeholder": "Tipo de aislamiento",
+                                "blurFunction": "{\"validateEmptyShowedInput\":[\"tipo_aislamiento\"]}",
+                                "errors": [],
+                                "okText": "Aceptar",
+                                "cancelText": "Cancelar",
+                                "options": [
+                                    {
+                                        "label": "Autoimpuesto"
+                                    },
+                                    {
+                                        "label": "Ordenado por médico"
+                                    },
+                                    {
+                                        "label": "Hospitalario"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "select",
+                                "id": "lugar_aislamiento",
+                                "value": "",
+                                "show": false,
+                                "placeholder": "Lugar del aislamiento",
+                                "blurFunction": "{\"validateEmptyShowedInput\":[\"lugar_aislamiento\"]}",
+                                "errors": [],
+                                "okText": "Aceptar",
+                                "cancelText": "Cancelar",
+                                "options": [
+                                    {
+                                        "label": "Ninguno"
+                                    },
+                                    {
+                                        "label": "Domicilio"
+                                    },
+                                    {
+                                        "label": "Domicilio de un tercero"
+                                    },
+                                    {
+                                        "label": "Hospital"
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "¿Cuántos días lleva en aislamiento?",
+                                "type": "input_text",
+                                "id": "dias_aislamiento",
+                                "show": false,
+                                "blurFunction": "{\"validateEmptyShowedInput\":[\"dias_aislamiento\"], \"validateIntegerPositiveNumber\":[\"dias_aislamiento\"], \"validateMinMaxLimitsAislamiento\":[\"dias_aislamiento\"]}",
+                                "errors": [],
+                                "value": "",
+                                "placeholder": "Ingresa la cantidad de días"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+]

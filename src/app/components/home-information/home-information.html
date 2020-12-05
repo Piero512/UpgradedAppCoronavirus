@@ -1,0 +1,22 @@
+<ion-content padding>
+    <h4 class="subTitle">Ubicación y tamaño de casa</h4>
+    <div id="form-container">
+        <ion-item>
+            <ion-label stacked>Latitud</ion-label>
+            <ion-input type="number" placeholder="Presiona 'Calcular' para localizarte" [(ngModel)]="latitude" disabled></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Longitud</ion-label>
+            <ion-input type="number" placeholder="Presiona 'Calcular' para localizarte" [(ngModel)]="longitude" disabled></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Área del terreno (m²)</ion-label>
+            <ion-input type="number" placeholder="Ingresa el área del terreno (m²)" [(ngModel)]="area" (keypress)="onEnterKey($event)"></ion-input>
+        </ion-item>
+        <div id="buttons-container">
+            <button ion-button class="button" (click)="calculate()"><span>Calcular</span></button>
+            <button ion-button class="button" (click)="save()"><span>Guardar</span></button>
+            <button ion-button class="button" (click)="cancel()"><span>Cancelar</span></button>
+        </div>
+    </div>
+</ion-content>

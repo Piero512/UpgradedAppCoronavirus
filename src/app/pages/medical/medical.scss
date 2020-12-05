@@ -1,0 +1,66 @@
+page-medical {
+
+    .container {
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    ion-select {
+        margin: 0 auto;
+        max-width: 70% !important;
+    }
+
+    .button {
+        margin-bottom: 5%;
+        position:center ;
+        float: inherit;
+        font-weight: bold;
+        font-size: 80%;
+        border-radius: 10px !important;
+    }
+
+    ion-card {
+        position: relative;
+        text-align: center;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        border-radius: 10px !important;
+
+        .card-title {
+            position: center;
+            text-align: center;
+            margin-top: 5%;
+            margin-bottom: 0%;
+            font-size: 1.6em;
+            width: 100%;
+            font-weight: bold;
+            color: #6e6e6e;
+        }
+
+    }
+
+    h1{
+        margin-bottom: 10%;
+    }
+
+    #logOutIcon,.icon{
+        color: #eeeeee;
+        display: inline-block;
+    }
+
+    p{
+        color: #eeeeee;
+        margin-top: 4%;
+    }
+
+    .empty-message {
+        color: #999999;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+    }
+}

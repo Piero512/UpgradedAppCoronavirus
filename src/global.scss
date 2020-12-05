@@ -24,3 +24,24 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "assets/fonts";
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@font-face{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: "400";
+    src: url($font-path+'/Manrope/static/Manrope-Regular.ttf');
+  }
+  
+  $font-family-base:'Manrope';
+  $button-md-text-color: #eeeeee;
+  $refresher-border-color: #ffffff;

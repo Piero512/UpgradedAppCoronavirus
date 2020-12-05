@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar color='primary'>
+        <ion-title>
+            Iniciar Sesión
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div padding text-center>
+        <br/>
+        <br/>
+        <br/>
+        <p style="font-size:40px">AutoSalud</p>
+        <ion-item style="margin-top:90px;" class="input-username" margin-top color="light">
+            <ion-icon color="navbar" name="person"></ion-icon>
+            <ion-input type="text" class="ion-text-center" placeholder="Ingrese el código de la app" [(ngModel)]="appPIN" 
+                       name="codigo_app" (keypress)="onEnterKey($event)">
+            </ion-input>
+        </ion-item>
+
+        <button class="btn-login" color="primary" [disabled]="!appPIN" ion-button block (click)="attemptAuth()">
+            <p id="ingresarButtonText">Ingresar</p>
+        </button>
+        <p class="contrasena" (click)="passwordRecover()">
+            ¿Ha olvidado su contraseña?
+        </p>
+    </div>
+</ion-content>

@@ -1,0 +1,153 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>{{ ((editingForm?.children)[sectionIndex]).label }}</ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only *ngIf="(editingForm?.children.length-1)!=sectionIndex" (click)="nextSection()">
+                <ion-icon style="margin-right: 10px;color: white !important;" name="arrow-forward"></ion-icon>
+            </button>
+            <button ion-button icon-only *ngIf="(editingForm?.children.length-1)==sectionIndex" (click)="finishForm()">
+                <p id="finalizarButtonText">Finalizar</p>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div *ngFor="let item of ((editingForm?.children)[sectionIndex]).children">
+
+        <div *ngIf="item.type=='collapseList'">
+            <button text-wrap ion-item color="secondary" data-toggle="collapse" [attr.href]="'#collapseExample'+indexCategoria" aria-expanded="false" (click)="clickCollapseButton(indexCategoria,'collapseExample'+indexCategoria,$event)">
+                <ion-label>{{item.label}}</ion-label>
+                <ion-icon *ngIf="item.initialShow" item-end name="arrow-dropdown"></ion-icon>
+                <ion-icon *ngIf="!item.initialShow" item-end name="arrow-dropright"></ion-icon>
+            </button>
+            <div *ngIf="item.initialShow" class="collapse show" id="collapseExample{{indexCategoria}}">
+                <ion-list no-lines>
+                    <button *ngFor="let item2 of item.children;let indexSubCategoria = index" ion-item (click)="clickNextPage(item2,indexCategoria,indexSubCategoria)">
+                        <ion-icon name="{{item2.icon}}" item-start></ion-icon>
+                        <ion-label>{{item2.label}}</ion-label>
+                    </button>
+                </ion-list>
+            </div>
+            <div *ngIf="!item.initialShow" class="collapse" id="collapseExample{{indexCategoria}}">
+                <ion-list no-lines>
+                    <button *ngFor="let item2 of item.children;let indexSubCategoria = index" ion-item (click)="clickNextPage(item2,indexCategoria,indexSubCategoria)">
+                        <ion-icon name="{{item2.icon}}" item-start></ion-icon>
+                        <ion-label>{{item2.label}}</ion-label>
+                    </button>
+                </ion-list>
+            </div>
+        </div>
+
+        <ion-list no-lines *ngIf="item.type=='toggle'" id={{item.id}} [class.hide_question]="!item.show" [class.show_question]="item.show">
+            <ion-list>
+                <ion-item>
+                    <ion-label>{{item.label}}</ion-label>
+                    <ion-toggle slot="start" [(ngModel)]="item.checked" checked="item.checked" (ionChange)="blurFunction($event,item.blurFunction)"></ion-toggle>
+                    <!--ion-checkbox [(ngModel)]="item.value" item-right checked="item.checked" (ionChange)="saveChanges()"></ion-checkbox-->
+                </ion-item>
+            </ion-list>
+        </ion-list>
+
+        <ion-item *ngIf="item.type=='input_text'" id={{item.id}} [class.hide_question]="!item.show" [class.show_question]="item.show">
+            <ion-label stacked [class.invalid_label]="item.errors !== undefined && item.errors.length > 0" class="pregunta">{{item.label}}</ion-label>
+            <ion-input type="text" [placeholder]="item.placeholder || 'Ingresa el valor'" [(ngModel)]="item.value" id={{item.id}}
+                       [class.invalid_input]="item.errors !== undefined && item.errors.length > 0" (ionChange)="blurFunction($event,item.blurFunction)"
+                       (keypress)="onEnterKey($event)">
+            </ion-input>
+        </ion-item>
+        <div text-left *ngIf="item.type=='input_text'" class="div-error" [class.error_message]="item.errors !== undefined && item.errors.length > 0">
+            {{item.errors !== undefined ? item.errors[item.errors.length - 1] : ''}}
+        </div>
+
+        <ion-item *ngIf="item.type=='input_number'" id={{item.id}} [class.hide_question]="!item.show" [class.show_question]="item.show">
+            <ion-label stacked [class.invalid_label]="item.errors !== undefined && item.errors.length > 0" class="pregunta">{{item.label}}</ion-label>
+            <ion-input type="number" [placeholder]="item.placeholder || 'Ingresa el valor'" [(ngModel)]="item.value" id={{item.id}}
+                       [class.invalid_input]="item.errors !== undefined && item.errors.length > 0" (ionChange)="blurFunction($event,item.blurFunction)"
+                       (keypress)="onEnterKey($event)">
+            </ion-input>
+        </ion-item>
+        <div text-left *ngIf="item.type=='input_number'" class="div-error" [class.error_message]="item.errors !== undefined && item.errors.length > 0">
+            {{item.errors !== undefined ? item.errors[item.errors.length - 1] : ''}}
+        </div>
+
+        <ion-list *ngIf="item.type=='checkbox_group'" id={{item.id}} [class.hide_question]="!item.show" [class.show_question]="item.show">
+            <ion-item>
+                <ion-label class="pregunta">{{item.label}}</ion-label>
+            </ion-item>
+            <ion-list>
+                <ion-item *ngFor="let opt of item.children;">
+                    <ion-label>{{opt.label}}</ion-label>
+                    <ion-checkbox [(ngModel)]="opt.checked" item-right checked="opt.checked" (ionChange)="blurFunction($event,item.blurFunction)"></ion-checkbox>
+                </ion-item>
+            </ion-list>
+        </ion-list>
+
+        <ion-item *ngIf="item.type=='select'" id={{item.id}} [class.hide_question]="!item.show" [class.show_question]="item.show">
+            <ion-label [class.invalid_label]="item.errors !== undefined && item.errors.length > 0" stacked class="pregunta">{{item.placeholder}}</ion-label>
+            <ion-select okText="Seleccionar" interface="popover" cancelText="Cancelar" [(ngModel)]="item.value" placeholder="Seleccione una opción" (ionChange)="blurFunction($event,item.blurFunction)">
+                <ion-option *ngFor="let op of item.options;" value={{op.label}}>{{op.label}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <div text-left *ngIf="item.type=='select'" class="div-error" [class.error_message]="item.errors !== undefined && item.errors.length > 0">
+            {{item.errors !== undefined ? item.errors[item.errors.length - 1] : ''}}
+        </div>
+
+        <ion-list no-lines *ngIf="item.type=='button'">
+            <button *ngFor="let item2 of item.children;let indexSubCategoria = index" ion-item (click)="clickNextPage(item2,0,indexSubCategoria)">
+                <ion-label>{{item.label}}</ion-label>
+            </button>
+        </ion-list>
+
+        <ion-list radio-group *ngIf="item.type=='radio'" id={{item.id}} [(ngModel)]="item.value" [class.hide_question]="!item.show" [class.show_question]="item.show" (blur)="item.show && blurFunction($event,item.blurFunction)" (ionBlur)="saveChanges()">
+            <ion-list-header>
+                <ion-label [class.invalid_label]="item.errors !== undefined && item.errors.length > 0" class="pregunta">{{item.label}}</ion-label>
+            </ion-list-header>
+            <ion-item *ngFor="let opt of item.children;">
+                <ion-label>{{opt.label}}</ion-label>
+                <ion-radio value={{opt.label}} checked=false (ionSelect)="blurFunction($event,item.blurFunction)"></ion-radio>
+            </ion-item>
+        </ion-list>
+        <div text-left *ngIf="item.type=='radio'" class="div-error" [class.error_message]="item.errors && item.show">
+            {{item.errors !== undefined ? item.errors[item.errors.length - 1] : ''}}
+        </div>
+
+        <ion-item *ngIf="item.type=='date'">
+            <ion-label [class.invalid_label]="item.errors !== undefined && item.errors.length > 0" class="pregunta">{{item.label}}</ion-label>
+            <ion-datetime cancelText="Cancelar" doneText="Seleccionar" mode="md" displayFormat="DD/MM/YYYY" id={{item.id}} [(ngModel)]="item.value" (ionCancel)="blurFunction($event,item.blurFunction)"
+              (ionChange)="blurFunction($event,item.blurFunction)" (ionBlur)="saveChanges()" [disabled]="readOnly()"></ion-datetime>
+            <ion-icon item-end name="calendar" [class.invalid_datepicker]="item.errors !== undefined && item.errors.length > 0"></ion-icon>
+        </ion-item>
+        <div text-left *ngIf="item.type=='date'" class="div-error" [class.error_message]="item.errors !== undefined && item.errors.length > 0">
+            {{item.errors !== undefined ? item.errors[item.errors.length - 1] : ''}}
+        </div>
+
+        <ion-item *ngIf="item.type=='time'">
+            <ion-label [class.invalid_label]="item.errors !== undefined && item.errors.length > 0" class="pregunta">{{item.label}}</ion-label>
+            <ion-datetime cancelText="Cancelar" doneText="Seleccionar" mode="md" displayFormat="HH:mm" id={{item.id}} [(ngModel)]="item.value" (ionCancel)="blurFunction($event,item.blurFunction)" (ionChange)="blurFunction($event,item.blurFunction)" (ionBlur)="saveChanges()" [disabled]="readOnly()"></ion-datetime>
+            <ion-icon item-end name="calendar" [class.invalid_datepicker]="item.errors !== undefined && item.errors.length > 0"></ion-icon>
+        </ion-item>
+        <div text-left *ngIf="item.type=='time'" class="div-error" [class.error_message]="item.errors !== undefined && item.errors.length > 0">
+            {{item.errors !== undefined ? item.errors[item.errors.length - 1] : ''}}
+        </div>
+
+        <div text-left *ngIf="item.type=='resultado'" class="div-error pregunta" style="font-size:18px;margin-top:5px;" [class.error_message]="item.value">
+            RESULTADO: {{item.value}}
+        </div>
+
+        <ion-item *ngIf="item.type=='textarea'">
+            <ion-textarea stacked placeholder={{item.placeholder}} type="text" [(ngModel)]="item.value" (ionBlur)="saveChanges()" ></ion-textarea>
+        </ion-item>
+
+        <ion-list *ngIf="item.type=='checkbox'">
+            <ion-item>
+                <ion-label class="pregunta">{{item.label}}</ion-label>
+            </ion-item>
+            <ion-item *ngFor="let opt of item.children;">
+                <ion-label>{{opt.label}}</ion-label>
+                <ion-checkbox [(ngModel)]="opt.value" item-right checked="opt.checked" (click)="clickFunction($event,item.keyupFunction)" required></ion-checkbox>
+            </ion-item>
+        </ion-list>
+
+    </div>
+</ion-content>

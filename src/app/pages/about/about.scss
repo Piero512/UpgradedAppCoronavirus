@@ -1,0 +1,56 @@
+page-about {
+
+    .icon{
+        color: #eeeeee;
+        display: inline-block;
+    }
+
+    #art-container {
+        display: grid;
+        align-items: center;
+    }
+
+    #app-name-container {
+        grid-row: 1;
+        grid-column: 1;
+        text-align: right;
+    }
+
+    #app-name-container h1 {
+        font-size: 40px;
+    }
+
+    #logo-container {
+        grid-row: 1;
+        grid-column: 2;
+        text-align: right;
+    }
+
+    p {
+        font-size: 16px;
+        text-align: justify;
+    }
+
+    #description-container {
+        margin-bottom: 30px;
+    }
+
+    #disclaimer-container {
+        margin-bottom: 20px;
+    }
+
+    .button {
+        border-radius: 10px !important;
+    }
+
+    .button span {
+        font-weight: bold;
+        color: #eeeeee;
+    }
+
+    #buttons-container {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+}

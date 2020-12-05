@@ -1,0 +1,58 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title id="tabTitle">Pruebas</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="logout()">
+				<ion-icon name="custom-logout"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-refresher (ionRefresh)="searchTestResults($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <div class="pin-container" margin>
+        <h2 class="title" style="font-weight:bold">Resultados de las pruebas</h2>
+        <p class="description">Aquí se mostraran los resultados de todas las pruebas que han sido realizadas.</p>
+    </div>
+
+    <div *ngIf="!testFound" class="not-found-message">
+        <p>No se ha encontrado ninguna prueba con ese código</p>
+    </div>
+
+    <div *ngFor="let userInfo of usersInfo">
+        <div *ngIf=" userInfo[0] != 'string'">
+            <h6 id="usersIdsText">Cedula: <strong>{{userInfo[0]}}</strong></h6>
+            <div *ngIf="userInfo[1] != null">
+                <h6 id="usersIdsText">Referencia: <strong>{{userInfo[1]}}</strong></h6>
+            </div>
+            <div *ngFor="let result of testsResultsMap[userInfo[0]]">
+                <ion-card *ngIf="result.muestra_id == userInfo[2]">
+                    <ion-card-header style="text-align: center;">
+                        Prueba {{userInfo[2]}}
+                    </ion-card-header>
+
+                    <ion-card-content style="padding-top:10px;">
+                        <div class="result-container" *ngIf="testStatuses[result.estado].toLowerCase() === 'procesada'">
+                            <span class="result1-label result-text">Estado: </span><span class="result-value value-1 result-text">{{ testStatuses[result.estado] }}</span>
+                            <span class="result2-label result-text">Resultado: </span><span class="result-value value-2 result-text">{{ testResults[result.resultado] }}</span>
+                            <div class="advice" *ngIf="result['recomendacion']">
+                                <p class="advice-title">Recomendación</p>
+                                <p class="advice-content">{{ result['recomendacion'] }}</p>
+                            </div>
+                        </div>
+                        <div class="result-container" *ngIf="testStatuses[result.estado].toLowerCase() !== 'procesada'">
+                            <span class="result1-label result-text">Estado: </span><span class="result-value value-1 result-text">{{ testStatuses[result.estado] }}</span>
+                        </div>
+                    </ion-card-content>
+                </ion-card>
+            </div>
+
+        </div>
+    </div>
+
+</ion-content>
