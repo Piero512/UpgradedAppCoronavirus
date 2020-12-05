@@ -1,0 +1,7 @@
+{
+  "name": "new_app_coronavirs",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
